@@ -13,7 +13,7 @@
 #include "Fixed.hpp"
 
 //Default constructor
-Fixed::Fixed() {
+Fixed::Fixed() : _fixedPoint(0) {
 	std::cout << "Default constructor called" << std::endl;
 }
 
@@ -43,7 +43,7 @@ Fixed::Fixed(const float number) {
 Fixed &Fixed::operator=(const Fixed &obj) {
 	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &obj) //vou verificar autoatribuicao a = a
-		_fixedPoint = getRawBits();
+		_fixedPoint = obj.getRawBits();
 	return (*this);
 }
 
