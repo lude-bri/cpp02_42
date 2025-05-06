@@ -24,6 +24,7 @@ class Fixed {
 
 	public:
 		Fixed();
+		Fixed(const Fixed &obj);
 		Fixed(const int	number);
 		Fixed(const float number);
 		Fixed &operator=(const Fixed &obj);
@@ -34,5 +35,7 @@ class Fixed {
 		float		toFloat() const;
 		int			toInt() const;
 };
+
+std::ostream &operator<<(std::ostream &out, const Fixed &fixed);
 
 #endif

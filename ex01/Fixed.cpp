@@ -17,7 +17,13 @@ Fixed::Fixed() {
 	std::cout << "Default constructor called" << std::endl;
 }
 
-//Default constructor
+//copy constructor
+Fixed::Fixed(const Fixed &obj) {
+	std::cout << "Copy constructor called" << std::endl;
+	_fixedPoint = obj.getRawBits();
+}
+
+//Default destructor 
 Fixed::~Fixed() {
 	std::cout << "Destructor called" << std::endl;
 }
@@ -33,25 +39,38 @@ Fixed::Fixed(const float number) {
 	std::cout << "Float constructor called" << std::endl;
 	_fixedPoint = roundf(number * (1 << _bits)); //arredondar para o inteiro mais prox
 }
+
+Fixed &Fixed::operator=(const Fixed &obj) {
+	std::cout << "Copy assignment operator called" << std::endl;
+	if (this != &obj) //vou verificar autoatribuicao a = a
+		_fixedPoint = getRawBits();
+	return (*this);
+}
+
 //returns the raw value of the fixed-point value
 int	Fixed::getRawBits() const {
-	std::cout << "getRawBits member function called" << std::endl;
+	// std::cout << "getRawBits member function called" << std::endl;
 	return (_fixedPoint);
 }
 
 //toFloat - converts fixed-point value to floating-point value
 float	Fixed::toFloat() const {
-	return (float)_fixedPoint / (1 << _bits);
+	return (static_cast<float>(_fixedPoint) / (1 << _bits));
 }
 
 //toInt - converts fixed-point value to an integer value
 int		Fixed::toInt() const {
-
+	return _fixedPoint >> _bits;
 }
 
 //function that sets the raw value of the fixed-point number
 void	Fixed::setRawBits(int const raw) {
 	_fixedPoint = raw;
+}
+
+std::ostream &operator<<(std::ostream &out, const Fixed &fixed) {
+	out << fixed.toFloat();
+	return out;
 }
 
 
