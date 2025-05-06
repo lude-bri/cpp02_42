@@ -49,7 +49,6 @@ Fixed &Fixed::operator=(const Fixed &obj) {
 
 //returns the raw value of the fixed-point value
 int	Fixed::getRawBits() const {
-	// std::cout << "getRawBits member function called" << std::endl;
 	return (_fixedPoint);
 }
 
@@ -72,3 +71,4 @@ std::ostream &operator<<(std::ostream &out, const Fixed &fixed) {
 	out << fixed.toFloat();
 	return out;
 }
+
