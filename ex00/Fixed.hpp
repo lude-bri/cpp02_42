@@ -19,7 +19,7 @@ class Fixed {
 
 	private:
 		int					_fixedPoint;
-		static const int	_bits;
+		static const int	_bits = 8;
 
 	public:
 		Fixed();
@@ -29,7 +29,6 @@ class Fixed {
 
 		int			getRawBits() const;
 		void		setRawBits(int const raw);
-
 };
 
 #endif

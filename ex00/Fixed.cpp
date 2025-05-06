@@ -15,21 +15,26 @@
 //default constructor
 Fixed::Fixed(){
 	std::cout << "Default constructor called" << std::endl;
+	setRawBits(0);
 }
 
 //copy constructor
 Fixed::Fixed(const Fixed &obj) {
 	std::cout << "Copy constructor called" << std::endl;
+	_fixedPoint = obj.getRawBits();
 }
 
 //copy assignment operator overload
 Fixed &Fixed::operator=(const Fixed &obj) {
 	std::cout << "Copy assignment operator called" << std::endl;
+	if (this != &obj) //vou verificar autoatribuicao a = a
+		_fixedPoint = getRawBits();
 	return (*this);
 }
 
 //returns the raw value of the fixed-point value
 int	Fixed::getRawBits() const {
+	std::cout << "getRawBits member function called" << std::endl;
 	return (_fixedPoint);
 }
 
@@ -39,4 +44,6 @@ void	Fixed::setRawBits(int const raw) {
 }
 
 //destructor
-Fixed::~Fixed(){}
+Fixed::~Fixed(){
+	std::cout << "Destructor called" << std::endl;
+}
