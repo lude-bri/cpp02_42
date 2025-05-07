@@ -65,7 +65,7 @@ public:
 2. Copy Constructor (`ClassName(const ClassName& other)`)
 
 * **Purpose:** Creates a deep copy of an existing object.
-* **Why? **So you don’t end up with two wizards accidentally sharing the same spellbook (disaster!).
+* **Why?** So you don’t end up with two wizards accidentally sharing the same spellbook (disaster!).
 
 Example:
 
