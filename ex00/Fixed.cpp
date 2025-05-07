@@ -28,7 +28,7 @@ Fixed::Fixed(const Fixed &obj) {
 Fixed &Fixed::operator=(const Fixed &obj) {
 	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &obj) //vou verificar autoatribuicao a = a
-		_fixedPoint = getRawBits();
+		_fixedPoint = obj.getRawBits();
 	return (*this);
 }
 
