@@ -6,7 +6,7 @@
 /*   By: lude-bri <lude-bri@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 00:58:42 by lude-bri          #+#    #+#             */
-/*   Updated: 2025/05/07 01:50:27 by lude-bri         ###   ########.fr       */
+/*   Updated: 2025/05/07 02:00:41 by lude-bri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,9 +86,9 @@ Fixed	&Fixed::operator++() {
 }
 
 Fixed	Fixed::operator++(int) {
-	Fixed temp(*this);
-	_fixedPoint++;
-	return temp;
+	Fixed temp(*this); //faco uma copia do estado atual
+	_fixedPoint++; //incremento o valor
+	return temp; //retorno a copia antiga (sem incremento)
 }
 
 Fixed	&Fixed::operator--() {
