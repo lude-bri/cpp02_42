@@ -6,23 +6,18 @@
 /*   By: lude-bri <lude-bri@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 00:58:42 by lude-bri          #+#    #+#             */
-/*   Updated: 2025/05/07 01:05:18 by lude-bri         ###   ########.fr       */
+/*   Updated: 2025/05/07 01:28:47 by lude-bri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
 //Default constructor
-Fixed::Fixed() : _fixedPoint(0) {
-}
+Fixed::Fixed() : _fixedPoint(0) {}
 
 //copy constructor
 Fixed::Fixed(const Fixed &obj) {
 	_fixedPoint = obj.getRawBits();
-}
-
-//Default destructor 
-Fixed::~Fixed() {
 }
 
 //To Int constructor
@@ -33,6 +28,10 @@ Fixed::Fixed(const int number) {
 //To Float constructor
 Fixed::Fixed(const float number) {
 	_fixedPoint = roundf(number * (1 << _bits)); //arredondar para o inteiro mais prox
+}
+
+//Default destructor 
+Fixed::~Fixed() {
 }
 
 Fixed &Fixed::operator=(const Fixed &obj) {
