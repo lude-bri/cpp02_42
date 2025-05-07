@@ -1,6 +1,3 @@
-# cpp02_42
-Ad-hoc polymorphism, operator overloading and the Orthodox Canonical class form
-
 <!-------cpp02_Image-------->
 <a name="readme-top"></a>
 <p align="center">
