@@ -8,9 +8,7 @@
 
 ## About
 
-This is the third Module of C++. 
-
-This module dives into operator overloading, ad-hoc polymorphism, and the Orthodox Canonical Form in C++.
+This is the third Module of C++. This module dives into operator overloading, ad-hoc polymorphism, and the Orthodox Canonical Form in C++.
 
 ----
 <!-------Index-------->
