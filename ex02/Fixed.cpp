@@ -6,7 +6,7 @@
 /*   By: lude-bri <lude-bri@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 00:58:42 by lude-bri          #+#    #+#             */
-/*   Updated: 2025/05/07 02:00:41 by lude-bri         ###   ########.fr       */
+/*   Updated: 2025/05/07 02:15:40 by lude-bri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,6 +138,7 @@ void	Fixed::setRawBits(int const raw) {
 	_fixedPoint = raw;
 }
 
+//operator
 std::ostream &operator<<(std::ostream &out, const Fixed &fixed) {
 	out << fixed.toFloat();
 	return out;
